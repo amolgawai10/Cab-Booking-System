@@ -1,8 +1,6 @@
 package com.cabbooking.cab_booking_system.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
@@ -13,6 +11,7 @@ import lombok.*;
 @ToString
 public class Booking {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     Customer customer;
@@ -21,5 +20,7 @@ public class Booking {
     private String feedback;
     @ManyToOne
     Driver driver;
+    private String startingLocation;
+    private String endingLocation;
 
 }

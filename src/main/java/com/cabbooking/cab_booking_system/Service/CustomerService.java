@@ -15,6 +15,11 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
+    public Customer getCustomerById(int customerId){
+        return customerRepository.findById(customerId).orElse(null);
+        //if customer exist return object otherwise return 'null'
+    }
+
     public String authenticateCustomer(String email, String password) throws UserNotFoundException {
         Customer customer = customerRepository.findByEmail(email);
 
