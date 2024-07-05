@@ -12,4 +12,9 @@ public class DriverService {
     public void registerDriver(Driver driver){
         driverRepository.save(driver);
     }
+
+    //It will fetch Driver details if his email available in Db
+    public Driver getDriverByEmailId(String email){
+        return driverRepository.findByEmailId(email);
+    }
 }

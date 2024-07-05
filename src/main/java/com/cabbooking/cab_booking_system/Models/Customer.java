@@ -12,10 +12,11 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Customer {
+public class Customer implements AppUser{
 
     //@Entity Annotation : it will convert entity means object into Table in database
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer age;
     private String password;
